@@ -1,0 +1,43 @@
+{% load cart_template_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Teras Indonesia">
+    <meta name="author" content="fauziahfz216@gmail.com">
+    <meta name="dicoding:email" content="fauziahfz216@gmail.com">
+    <link rel="icon" href="{% static '/images/icon.ico' %}" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>Teras Indonesia | Lestarikan Budaya</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/template-teras.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/owl-carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/lightbox.css' %}">
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include 'footer.html' %}
+
+    {% include 'scripts.html' %}
+    
+
+</body>
+
+</html>

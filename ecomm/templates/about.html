@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading main-page-heading" id="top" style="background-image: url('{% static '/images/about-us-page-heading.jpg' %}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <img src="{% static '/images/logo-main.png' %}" alt="" style="width:400px">
+                        <hr>
+                        <p class="body-about-us"> Teras Nusantara merupakan sebuah wadah bagi para seniman di Indonesia, terutama dalam bidang kesenian tradisional Indonesia. Di tengah perkembangan zaman yang terus berubah, seni tradisional Indonesia sering kali menghadapi tantangan dalam upaya melestarikan dan mengembangkan kekayaan budaya ini. Oleh karena itu, Teras Nusantara hadir sebagai solusi untuk mendukung, mendorong, dan mengangkat potensi para seniman yang berdedikasi tinggi dalam mempertahankan warisan budaya luhur ini.</p>
+                        <p class="body-about-us">Teras Nusantara juga berkomitmen untuk menjalin kerjasama dengan berbagai pihak, termasuk lembaga pemerintah, komunitas lokal, serta pelaku seni dan budaya lainnya, guna menciptakan sinergi yang kuat dalam menjaga dan memperkaya kekayaan seni tradisional Indonesia. Sebagai lembaga yang mencintai kebudayaan Indonesia, Teras Nusantara percaya bahwa seni tradisional memiliki daya tarik dan pesona yang abadi. Dengan terus mendukung para seniman dan mempromosikan seni tradisional Indonesia secara luas, kami berharap dapat memastikan bahwa kekayaan budaya ini tetap hidup dan dikenal oleh generasi sekarang dan yang akan datang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Our Team Area Starts ***** -->
+    <section class="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Yuk Kenalan Dengan Kami</h2>
+                    </div>
+                </div>
+                <div class="col-lg-2"> </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="https://www.linkedin.com/in/pauziah/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://www.instagram.com/fauziiyaa._/"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static '/images/team-member-01.jpg' %}" alt="pauziah">
+                            
+                        </div>
+                        <div class="down-content">
+                            <h4>Pauziah</h4>
+                            <span>Founder | Fullstack Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="https://www.linkedin.com/in/sheila-riva-rezqian/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://www.instagram.com/sheilavaa/"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static '/images/team-member-02.jpg' %}" alt="Sheila Riva R." style="height: 350px">
+                        </div>
+                        <div class="down-content">
+                            <h4>Sheila Riva R.</h4>
+                            <span>Co-Founder | UI/UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2"> </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Our Team Area Ends ***** -->
+
+    <!-- ***** Services Area Starts ***** -->
+    <section class="our-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Layanan Kami</h2>
+                        <span>Teras Indonesia menyediakan berbagai layanan berkualitas tinggi dalam rangka mendukung dan mempromosikan seni tradisional Indonesia. Dengan komitmen kami untuk melestarikan kekayaan budaya ini, kami menghadirkan berbagai fasilitas dan program yang dirancang khusus untuk memenuhi kebutuhan dan harapan para seniman serta masyarakat pecinta seni.</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Talent Profesional</h4>
+                        <p>Teras Indonesia menyediakan layanan penyediaan talent-talent profesional dalam bidang seni tari tradisional Indonesia.</p>
+                        <img src="{% static '/images/service-01.jpg' %}" alt="Talent Profesional">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Program Edukasi Budaya</h4>
+                        <p>Mengembangkan program kesadaran budaya di masyarakat, seperti workshop, pentas seni, pameran seni, dan lainnya.</p>
+                        <img src="{% static '/images/service-02.jpg' %}" alt="Program Edukasi Budaya">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Kolaborasi Seni dan Budaya</h4>
+                        <p>Teras Indonesia senantiasa terbuka untuk berkolaborasi dengan lembaga, komunitas, dan individu lain yang memiliki minat dalam seni dan budaya Indonesia.</p>
+                        <img src="{% static '/images/service-03.jpg' %}" alt="Kolaborasi Seni dan Budaya">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Services Area Ends ***** -->
+    
+{% endblock content %}

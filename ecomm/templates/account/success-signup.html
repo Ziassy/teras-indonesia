@@ -1,0 +1,27 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="vh-100 gradient-custom d-flex justify-content-center align-items-center">
+        <div class="container py-3">
+            <div class='text-center mb-5'> 
+              <img src="{% static '/images/logo-main.png' %}" alt="logo" style="width:320px">
+            </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div id="card-bg-gradient" class="card text-white" style="border-radius: 1rem;">
+                <div class="card-body text-center">
+                  {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                      <img class="py-4" src="{% static '/images/icon-check-circle.svg' %}" alt="logo">
+                      <h5 class="pb-3"><b>Pembuatan Akun Sukses</b></h5>
+                      <span style="font-size: 14px">{{message}}</span>
+                      <a href="/auth/login/" id="signup" class="btn-sign-in my-4" type="submit" >Masuk</a>
+                      {% endif %}
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

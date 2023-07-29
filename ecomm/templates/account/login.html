@@ -1,0 +1,46 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% block content %}
+  <section class="vh-100 gradient-custom">
+        <div class="container py-5">
+          <div class='text-center mb-3'> 
+            <img src="{% static '/images/logo-main.png' %}" alt="logo" style="width:320px">
+          </div>
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div id="card-bg-gradient" class="card text-white" style="border-radius: 1rem;">
+                <div class="card-body text-center">
+
+                  <form action="/auth/login/" id="login_form" method="post">
+                    {% csrf_token %}
+                    <div class="md-5 pb-2">
+                      <h2 class="fw-bold text-uppercase"><b>Masuk</b></h2> 
+                      {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <div class="alert alert-{{ message.tags }} fade show" role="alert">
+                            <span style="color: #FCA5A5">{{ message }}</span>
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                      <div class="form-outline form-white mt-5 mb-3">
+                        <input name="username" id="username" type="text" class="form-control form-control-lg" placeholder="Username" required/>
+                      </div>
+                      <div class="form-outline form-white mb-4">
+                        <input name="password" id="pass1" type="password" class="form-control form-control-lg" placeholder="Password" required/>
+                        <label class="form-label text-left" for="password">Silakan masukkan setidaknya 8 karakter, sebuah angka, dan sebuah karakter khusus.</label>
+                      </div>
+                      <button class="btn-sign-in" type="submit">Masuk</button>
+                  </form>
+
+                  </div>
+                    <p class="text-white">Belum punya akun? <a href="/auth/signup/" class="text-orange-400 fw-bold link-regist">Register</a>
+                    </p>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+ 
+
+{% endblock content %}

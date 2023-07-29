@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading main-page-heading" id="top" style="background-image: url('{{ object.main_banner_detail.url }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <img src="{% static '/images/logo-main.png' %}" alt="" style="width:400px">
+                        <hr>
+                        <span>“Bangga Dengan Budaya, Bangga Dengan Nusantara”</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <!-- ***** Product Area Starts ***** -->
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                <div class="left-images">
+                    <img src="{{ object.gambar_detail.url }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="right-content">
+                    <h4>{{ object.nama_produk }}</h4>
+                    <span class="price">Rp. {{ object.harga }}</span>
+                    <ul class="stars">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= object.rating|default:0 %}
+                                <li><i class="fa fa-star" style="color: #EAB308"></i></li>
+                            {% else %}
+                                <li><i class="fa fa-star"></i></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <span class="deskripsi">{{ object.deskripsi }}</span>
+                    <div class="row my-3 border-top">
+                        <div class="col-lg-1 py-2">
+                            <img src="{% static "/images/iconrangemember.png" %}" alt="">
+                        </div>
+                        <div class="col-lg-11 py-2">
+                            <span class="range">{{ object.jumlah_orang }} orang/tim</span>
+                        </div>
+                        <div class="col-lg-1 my-2">
+                            <img src="{% static "/images/iconlocation.png" %}" alt="">
+                        </div>
+                        <div class="col-lg-11 my-2">
+                            <span class="range">{{ object.asal_budaya }}</span>
+                        </div>
+                        <div class="col-lg-1 my-1">
+                            <img src="{% static "/images/iconbuilding.png" %}" alt="">
+                        </div>
+                        <div class="col-lg-11 my-1">
+                            <span class="range">{{ object.lokasi }}</span>
+                        </div>
+                    </div>
+                    <div class="row my-3 border-top">
+                        <div class="col-lg-6 py-3">
+                                {% if object.current_stok <= 0 %}
+                                    <span class="range text-red">Tidak Tersedia</span>
+                                {% else %}
+                                    <span class="range text-green">Tersedia</span>
+                                {% endif %}
+                            <span class="range">{{ object.current_stok }}/{{ object.max_stok }} tim</span>
+                        </div>
+                        <div class="col-lg-6 py-3">
+                        <div class="green-border-button">
+                            <a href="https://api.whatsapp.com/send?phone=6285887322352&text=Saya%20tertarik%20dengan%20produk%20ini:%20http://127.0.0.1:8000{{ object.get_absolute_url }}">
+                            <img src="{% static "/images/icon-whatsaap.svg" %}" alt="Hubungi Sekarang">
+                            Hubungi Sekarang
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Product Area Ends ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading-detail-produk text-center" id="top" style="background-image: url('{{ object.banner_history_prod.url }}');">
+        <div class="container-500">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2 class="py-5">Tentang {{ object.nama_produk }}</h2>
+                        <p>{{ object.desc_history_one }}</p>
+                        <p class="my-3">{{ object.desc_history_two }}</p>
+                        <p class="my-3 mb-5">{{ object.desc_history_three }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+{% endblock content%}

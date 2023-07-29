@@ -1,0 +1,54 @@
+{% load static %}
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="{% static '/images/white-logo.png' %}" alt="logo" style="width: 300px">
+                            
+                        </div>
+                        <ul>
+                            <li><a href="#">Jl. Medan Merdeka Utara No. 3, Jakarta Pusat.</a> </li>
+                            <li><a href="#">terasIndonesia@company.com</a></li>
+                            <li><a href="#">+62858873473</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Kategori Talent</h4>
+                    <ul>
+                        <li><a href="{% url 'toko:produk-list' %}?category=ST">Seni Tari Tradisional</a></li>
+                        <li><a href="{% url 'toko:produk-list' %}?category=SM">Seni Musik Tradisional</a></li>
+                        <li><a href="{% url 'toko:produk-list' %}?category=SR">Seni Rupa Tradisional</a></li>
+                        <li><a href="{% url 'toko:produk-list' %}?category=STR">Seni Teater Tradisional</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="{% url 'toko:about' %}">Tentang Kami</a></li>
+                        <li><a href="{% url 'toko:home-produk-list' %}#explore">Acara Talent</a></li>
+                        <li><a href="{% url 'toko:contact' %}">Daftarkan Talent</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © <script>document.write(new Date().getFullYear());</script> Teras Indonesia. All Rights Reserved.
+
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  

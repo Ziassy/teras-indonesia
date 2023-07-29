@@ -1,0 +1,322 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading main-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <img src="{% static '/images/logo-main.png' %}" alt="" style="width:400px">
+                        <hr>
+                        <span>“Bangga Dengan Budaya, Bangga Dengan Nusantara”</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class=" main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>Tentang Kami</h4>
+                                <span>Bersama-sama kita lestarikan budaya Indonesia</span>
+                                <div class="main-border-button">
+                                    <a href="{% url 'toko:about' %}">Selengkapnya</a>
+                                </div>
+                            </div>
+                            <img src="{% static '/images/left-banner-image.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Seni Tari</h4>
+                                            <span>Tari Tradisional Nusantara</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Seni Tari</h4>
+                                                <p>Tersedia berbagai talent profesional dalam bidang seni tari tradisional.
+                                                </p>
+                                                <div class="main-border-button">
+                                                    <a href="{% url 'toko:produk-list' %}?category=ST">Selengkapnya</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <img src="{% static '/images/baner-right-image-01.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Seni Musik</h4>
+                                            <span>Musik Tradisional Nusantara</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Seni Musik</h4>
+                                                <p>Tersedia berbagai talent profesional dalam bidang seni musik tradisional.
+                                                </p>
+                                                <div class="main-border-button">
+                                                    <a href="{% url 'toko:produk-list' %}?category=SM">Selengkapnya</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <img src="{% static '/images/baner-right-image-02.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Seni Rupa</h4>
+                                            <span>Karya Rupa Tradisional Nusantara</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Seni Rupa</h4>
+                                                <p>Tersedia berbagai talent profesional dalam bidang seni rupa tradisional.
+                                                </p>
+                                                <div class="main-border-button">
+                                                    <a href="{% url 'toko:produk-list' %}?category=SR">Selengkapnya</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{% static '/images/baner-right-image-03.jpg' %}" alt="">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Seni Teater </h4>
+                                            <span>Teater Tradisional Nusantara</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Seni Teater </h4>
+                                                <p>Tersedia berbagai talent profesional dalam bidang seni teater tradisional.
+                                                </p>
+                                                <div class="main-border-button">
+                                                    <a href="{% url 'toko:produk-list' %}?category=STR">Selengkapnya</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{% static '/images/baner-right-image-04.jpg' %}" alt="">
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    <!-- ***** Populer Area Starts ***** -->
+    <section class="section" id="men">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Talent Populer</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if popular_products %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="men-item-carousel">
+                        <div class="owl-men-item owl-carousel">
+                            
+                            {% for product in popular_products %}
+                            <div class="item">
+                                <div class="thumb">
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img src="{{ product.gambar.url }}" alt="{{ product.nama_produk }}">
+                                        <span class="badge-populer">Populer</span>
+                                    </a> 
+                                </div>
+                                <div class="down-content">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <h4>{{ product.nama_produk }}</h4>
+                                            <span>Rp. {{ product.harga }}</span>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <ul class="stars">
+                                                {% for i in "12345" %}
+                                                    {% if forloop.counter <= product.rating|default:0 %}
+                                                        <li><i class="fa fa-star" style="color: #EAB308"></i></li>
+                                                    {% else %}
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <span>Tidak ada produk populer yang ditampilkan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    <!-- ***** Poluer Area Ends ***** -->
+
+    <!-- ***** Recomendation Area Starts ***** -->
+    <section class="section" id="women">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Rekomendasi Kami</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if recomended_products %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="women-item-carousel">
+                        <div class="owl-women-item owl-carousel">
+                        {% for product in recomended_products %}
+                            <div class="item">
+                                <div class="thumb">
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img src="{{ product.gambar.url }}" alt="{{ product.nama_produk }}">
+                                        {% if product.is_popular %}
+                                        <span class="badge-populer">Populer</span>
+                                        {% endif %}
+                                    </a> 
+                                </div>
+                                <div class="down-content">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <h4>{{ product.nama_produk }}</h4>
+                                            <span>Rp. {{ product.harga }}</span>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <ul class="stars">
+                                                {% for i in "12345" %}
+                                                    {% if forloop.counter <= product.rating|default:0 %}
+                                                        <li><i class="fa fa-star" style="color: #EAB308"></i></li>
+                                                    {% else %}
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <span>Tidak ada produk rekomendasi yang ditampilkan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    <!-- ***** Recomendation Area Ends ***** -->
+
+    <!-- ***** Explore Area Starts ***** -->
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <h2>Acara Yang Akan Datang</h2>
+                        <span>Halo sahabat Nusantara!!!
+Sebentar lagi talent-talent yang disediakan oleh Teras Indonesia akan tampil di beberapa acara loh. Yuk teman-teman yang ingin melihat penampilan kesenian tradisional Bangsa kita jangan lupa untuk hadir yaa agar kebudayaan Bangsa kita tetap hidup dan terus menjadi kebanggaan sahabat Nusantara. Seperti halnya slogan Teras Indonesia:  </span>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p class="py-2">Bangga Dengan Budaya, Bangga Dengan Nusantara.</p>
+                        </div>
+                        <p>Kehadiran teman-teman juga akan menjadi dukungan besar bagi para seniman dan pelaku seni tradisional yang telah berjuang untuk melestarikan warisan budaya leluhur. 
+                        </p>
+                        <p>Yuk jangan lewatkan kesempatan ini, segera catat tanggal acara-acara yang ada dan segera daftarkan diri untuk menikmati pertunjukan dari talent-talent kami!!!</p>
+                        <div class="orange-border-button">
+                            <a href="#">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="leather">
+                                    <h4>Talent dari seluruh Indonesia</h4>
+                                    <span>Lebih dari 1000 talent kesenian</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="first-image">
+                                    <img src="{% static '/images/explore-image-01.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="second-image">
+                                    <img src="{% static '/images/explore-image-02.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="types">
+                                    <h4>Lestarikan Budaya Nusantara</h4>
+                                    <span>Terus jaga warisan leluhur kita.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Explore Area Ends ***** -->
+    {% endblock content %}

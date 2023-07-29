@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Contact Area Starts ***** -->
+    <div class="contact-us py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3"> </div>
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2 class="text-center mb-4">"Bergabunglah dengan Komunitas Kreatif Kami Sekarang!"</h2>
+                        <span> Pastikan anda mengisi data dengan benar untuk proses selanjutnya, kami akan menghubungi dalam 24 x 7 terhitung saat anda mengirimkan data diri. </span>
+                    </div>
+                   <form id="contact" method="post"> 
+                    {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Nama Lengkap" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                            <fieldset>
+                                <input name="email" type="text" id="email" placeholder="Alamat Email" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 my-4">
+                            <fieldset>
+                                <input name="phone" type="text" id="phone" placeholder="Nomor Telepon (+62)" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 my-4">
+                            <fieldset>
+                                <select name="art_category" id="art_category" required="" placeholder="Kategori Seni">
+                                <option value="" selected disabled>Pilih Kategori Seni</option>
+                                <option value="ST">Seni Tari</option>
+                                <option value="STR">Seni Teater</option>
+                                <option value="SM">Seni Musik</option>
+                                <option value="SR">Seni Rupa</option>
+                                <!-- Tambahkan opsi lain sesuai dengan kategori seni yang diinginkan -->
+                                </select>
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 my-2">
+                            <fieldset>
+                                <input name="portfolio" type="text" id="portfolio" placeholder="Portofolio atau Link Media Sosial" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 my-2">
+                            <fieldset>
+                                <input name="address" type="text" id="address" placeholder="Alamat Domisili" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                            <fieldset>
+                                <textarea name="experience" rows="6" id="experience" placeholder="Keahlian dan Pengalaman" required=""></textarea>
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-lg-3"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Contact Area Ends ***** -->
+
+    {% endblock content %}

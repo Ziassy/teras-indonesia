@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+    {% if selected_category %}
+    <div class="page-heading main-page-heading" id="top" style="background-image: url('{{ selected_category.banner_category.url }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <img src="{% static '/images/logo-main.png' %}" alt="" style="width:400px">
+                        <hr>
+                        <span>“Bangga Dengan Budaya, Bangga Dengan Nusantara”</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    
+
+    <!-- ***** Products Area Starts ***** -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2 class="pb-3">{{ selected_category.nama_category }}</h2>
+                        <span>{{ selected_category.desc_category }}</span>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+        </div>
+    {% endif %}
+        <div class="container">
+            <div class="row">
+                {% if object_list %}
+                    {% for pItem in object_list %}
+                    <div class="col-lg-4">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="{{ pItem.get_absolute_url }}">
+                                    <img src="{{ pItem.gambar.url }}" alt="{{ pItem.nama_produk }}">
+                                    {% if pItem.is_popular %}
+                                        <span class="badge-populer">Populer</span>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="down-content">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <h4>{{ pItem.nama_produk }}</h4>
+                                        <span>Rp. {{ pItem.harga }}</span>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <ul class="stars">
+                                            {% for i in "12345" %}
+                                                {% if forloop.counter <= pItem.rating|default:0 %}
+                                                    <li><i class="fa fa-star" style="color: #EAB308"></i></li>
+                                                {% else %}
+                                                    <li><i class="fa fa-star"></i></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-lg-12">
+                        <div class="pagination">
+                            <ul>
+                                {% for page in page_links %}
+                                    <li {% if page.is_current %}class="active"{% endif %}>
+                                        <a href="{{ page.url }}">{{ page.page_number }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading">
+                                    <span>Tidak ada produk yang ditampilkan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
+    <!-- ***** Products Area Ends ***** -->
+    <!--End Brands-->
+    
+    {% endblock content %}
