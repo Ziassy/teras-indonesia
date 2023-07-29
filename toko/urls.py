@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.conf import settings
-from django.urls import path, include
+from django.conf.urls.static import static
 from django.views.static import serve
 from . import views
 
@@ -21,9 +21,8 @@ urlpatterns = [
      path('payment/<payment_method>', views.PaymentView.as_view(), name='payment'),
      path('paypal-return/', views.paypal_return, name='paypal-return'),
      path('paypal-cancel/', views.paypal_cancel, name='paypal-cancel'),
+    
 ]
 
-if settings.DEBUG:
-    urlpatterns += [
-        path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
-    ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
