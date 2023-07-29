@@ -15,7 +15,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.views.decorators.csrf import csrf_protect
 import re
 
-@csrf_protect
+# @csrf_protect
 def signup(request):
     if request.method=="POST": 
         username=request.POST['username']
@@ -56,7 +56,7 @@ def successSignup(request):
     return render(request, 'account/success-signup.html')
 
 
-@csrf_protect
+# @csrf_protect
 def handlelogin(request):
     if request.method=="POST":
 
@@ -74,7 +74,7 @@ def handlelogin(request):
 
     return render(request,'account/login.html')   
 
-@csrf_protect #Prevention CSRF (Cross-Site Request Forgery)
+# @csrf_protect #Prevention CSRF (Cross-Site Request Forgery)
 def handle_logout(request):
     logout(request)
     # Untuk redirect ke page home ( / ) setelah logout
