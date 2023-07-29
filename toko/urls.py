@@ -20,9 +20,13 @@ urlpatterns = [
      path('empty-order-summary/', views.empty_view_order_summary, name='empty-order-summary'),
      path('payment/<payment_method>', views.PaymentView.as_view(), name='payment'),
      path('paypal-return/', views.paypal_return, name='paypal-return'),
-     path('paypal-cancel/', views.paypal_cancel, name='paypal-cancel'),
-    
+     path('paypal-cancel/', views.paypal_cancel, name='paypal-cancel')
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+# URL pattern for serving media files
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    urlpatterns += [
+        path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
