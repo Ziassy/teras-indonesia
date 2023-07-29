@@ -1,4 +1,7 @@
 from django.urls import path
+from django.conf import settings
+from django.urls import path, include
+from django.views.static import serve
 from . import views
 
 app_name = 'toko'
@@ -19,3 +22,8 @@ urlpatterns = [
      path('paypal-return/', views.paypal_return, name='paypal-return'),
      path('paypal-cancel/', views.paypal_cancel, name='paypal-cancel'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
