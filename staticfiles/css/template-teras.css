@@ -168,11 +168,12 @@ body {
   font-weight: 500;
   transition: all .3s;
   margin-top: 30px;
+  border-radius: 4px;
 }
 
 .orange-border-button a:hover {
-  background-color: #fff;
-  color: #2a2a2a;
+  background-color: #956D2C;
+  color: #fff;
 }
 
 .main-white-button a {
@@ -803,8 +804,21 @@ Men
 .badge-populer {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
   background-color: #B31312; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  font-size: 12px; /* Choose your desired font size */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px; /* Adjust border radius as needed */
+  z-index: 1;
+}
+
+/* CSS for the badge */
+.badge-recomentation {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #BA8837; /* Choose your desired background color */
   color: #fff; /* Choose your desired text color */
   font-size: 12px; /* Choose your desired font size */
   padding: 4px 8px; /* Adjust padding as needed */

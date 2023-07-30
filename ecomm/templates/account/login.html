@@ -25,9 +25,11 @@
                       <div class="form-outline form-white mt-5 mb-3">
                         <input name="username" id="username" type="text" class="form-control form-control-lg" placeholder="Username" required/>
                       </div>
-                      <div class="form-outline form-white mb-4">
-                        <input name="password" id="pass1" type="password" class="form-control form-control-lg" placeholder="Password" required/>
-                        <label class="form-label text-left" for="password">Silakan masukkan setidaknya 8 karakter, sebuah angka, dan sebuah karakter khusus.</label>
+                      <div class="form-outline form-password form-white mb-4 position-relative">
+                        <input name="password" id="pass1" type="password" class="form-control form-control-lg" placeholder="Password" required />
+
+                        <i class="icon-pass far fa-eye-slash toggle-password" onclick="togglePasswordVisibility('pass1', 'icon-pass')"></i>
+                        <label class="form-label text-left" for="pass1">Silakan masukkan setidaknya 8 karakter, sebuah angka, dan sebuah karakter khusus.</label>
                       </div>
                       <button class="btn-sign-in" type="submit">Masuk</button>
                   </form>

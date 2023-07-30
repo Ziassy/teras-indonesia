@@ -73,10 +73,12 @@
                         </div>
                         <div class="col-lg-6 py-3">
                         <div class="green-border-button">
-                            <a href="https://api.whatsapp.com/send?phone=6285887322352&text=Saya%20tertarik%20dengan%20produk%20ini:%20http://127.0.0.1:8000{{ object.get_absolute_url }}">
+                        {% if user.is_authenticated %}
+                            <a href="https://api.whatsapp.com/send?phone=6285887322352&text=Hallo%20admin,%20saya%20{{ request.user.username }},%20ingin%20melakukan%20reservasi%20talent%20berikut%20untuk%20acara%20penting%20saya,%20bisakah%20kita%20berdiskusi%20lebih%20lanjut%20terkait%20talent%20ini%20https://teras-indonesia.up.railway.app{{ object.get_absolute_url }}">
                             <img src="{% static "/images/icon-whatsaap.svg" %}" alt="Hubungi Sekarang">
                             Hubungi Sekarang
                             </a>
+                        {% endif %}
                         </div>
                         </div>
                     </div>

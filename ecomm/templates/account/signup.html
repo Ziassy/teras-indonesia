@@ -28,13 +28,14 @@
                     <div class="form-outline form-white mb-3">
                       <input name="email" id="email" type="email" class="form-control form-control-lg" placeholder="Email" required/>
                     </div>
-                    <div class="form-outline form-white mb-3">
-                      <input name="pass1" id="upass1erPassword" type="password" class="form-control form-control-lg" placeholder="Password" required/>
-                      <label class="form-label text-left" for="password">Silakan masukkan setidaknya 8 karakter, sebuah angka, dan sebuah karakter khusus.</label>
-
+                    <div class="form-outline form-password form-white mb-4 position-relative">
+                        <input name="pass1" id="upass1erPassword" type="password" class="form-control form-control-lg" placeholder="Password" required/>
+                        <i class="icon-pass far fa-eye-slash toggle-password" onclick="togglePasswordVisibility('upass1erPassword', 'icon-pass')"></i>
+                        <label class="form-label text-left" for="password">Silakan masukkan setidaknya 8 karakter, sebuah angka, dan sebuah karakter khusus.</label>
                     </div>
-                    <div class="form-outline form-white mb-4">
-                      <input name="pass2" id="pass2" type="password" class="form-control form-control-lg" placeholder="Confirm Password" required/>
+                    <div class="form-outline form-password form-white mb-4 position-relative">
+                        <input name="pass2" id="pass2" type="password" class="form-control form-control-lg" placeholder="Confirm Password" required/>
+                        <i class="icon-confirm-pass far fa-eye-slash toggle-password" onclick="togglePasswordVisibility('pass2', 'icon-confirm-pass')"></i>
                     </div>
                     <button id="signup" class="btn-sign-in" type="submit" >Daftar</button>
                 </form>

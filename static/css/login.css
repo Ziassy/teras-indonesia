@@ -48,3 +48,19 @@
 .link-regist:hover {
   color: #b3730d !important;
 }
+
+/* Ganti ini jika Anda ingin mengatur lebar input */
+.form-password {
+  position: relative;
+}
+
+/* Ganti ini jika Anda ingin mengatur posisi ikon */
+.form-password i{
+  position: absolute;
+  right: 3px; /* Sesuaikan posisi ikon di sebelah kanan input */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #b3730d;
+  width: 50px;
+  height: 50px;
+}
