@@ -221,12 +221,7 @@
                                 <div class="thumb">
                                     <a href="{{ product.get_absolute_url }}">
                                         <img src="{{ product.gambar.url }}" alt="{{ product.nama_produk }}">
-                                        {% if product.is_popular %}
-                                        <span class="badge-populer">Populer</span>
-                                        {% endif %}
-                                        {% if product.is_recomended %}
                                         <span class="badge-recomentation">Rekomendasi</span>
-                                        {% endif %}
                                     </a> 
                                 </div>
                                 <div class="down-content">
@@ -322,4 +317,8 @@ Sebentar lagi talent-talent yang disediakan oleh Teras Indonesia akan tampil di 
         </div>
     </section>
     <!-- ***** Explore Area Ends ***** -->
+    <audio autoplay>
+        <source src="{% static '/audio/backsound.mp3' %}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     {% endblock content %}

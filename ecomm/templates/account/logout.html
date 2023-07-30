@@ -6,9 +6,9 @@
 
 {% block content %}
     <div class="subscribe container pt-4">
-      <h1>{% trans "Sign Out" %}</h1>
+      <h1>{% trans "Log Out" %}</h1>
 
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+      <p>{% trans 'Apakah anda yakin ingin keluar?' %}</p>
 
       <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
@@ -17,7 +17,7 @@
         {% endif %}
         {% comment %} <button class="btn btn-danger" type="submit">{% trans 'Sign Out' %}</button> {% endcomment %}
         <button type="submit" style="width: 100px; margin-top: 10px">
-            {% trans 'Sign Out' %}
+            {% trans 'Keluar' %}
         </button>
       </form>
 
